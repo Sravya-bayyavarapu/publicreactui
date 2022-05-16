@@ -8,14 +8,17 @@ function Home() {
     <main>
       <section class="py-5 bg-dark">
           <div class="container">
-              <div class="text-center py-4 text-white">
-                  <h1>Welcome to the DLPS Intake Portal</h1>
-              </div>
               <div class="row">
-                  <div>
+                  <div class="col-10">
+                      <div class="text-center py-4 text-white">
+                        <h1>Welcome to the DLPS Intake Portal</h1>
+                      </div>
                       <p class="lead text-muted">We are here to partner with you to manage your digital learning objects and instructor lcd training on the 
                       Firm's learning platforms. for support and questions around Learn and LearnNow, contact us &nbsp;  
                       <a href="#">here.</a></p>
+                  </div>
+                  <div class="col">
+                      <img src="/logo192.png" alt="McKinsey logo" />
                   </div>
               </div>
           </div>
@@ -100,6 +103,9 @@ function Home() {
                         <li><a href="#">General request</a></li>
                     </ul>
                 </div>
+              </div>
+              <div class="row bg-white mt-1">
+                <a href="#">View my requests &nbsp;&gt;</a>
               </div>
           </div>
       </section>
