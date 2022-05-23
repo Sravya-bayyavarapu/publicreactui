@@ -1,34 +1,59 @@
 import React from "react";
+import { Header, CONDENSED_HEADER, enrichNavigationNodesWithIds } from '@mds/mds-reactjs-library';
 
-function Header() {
+function MckHeader() {
+    const [path, setPath] = React.useState('Digital Learning Platforms & Solutions (DLPS) Operations');
+    let navConfig = [
+        {
+            label: 'Digital Learning Platforms & Solutions (DLPS) Operations',
+            locator: () => path === 'Digital Learning Platforms & Solutions (DLPS) Operations',
+            onClick: () => setPath('Digital Learning Platforms & Solutions (DLPS) Operations'),
+            
+        },
+        {
+            label: 'Home',
+            locator: () => path === 'Home',
+            onClick: () => setPath('Home'),
+        },
+        {
+            label: 'My Requests',
+            locator: () => path === 'My Requests',
+            onClick: () => setPath('My Requests'),
+        },
+        {
+            label: 'Guides and Resources',
+            locator: () => path === 'Guides and Resources',
+            onClick: () => setPath('Guides and Resources'),
+        },
+        {
+            label: 'Reporting',
+            locator: () => path === 'Reporting',
+            onClick: () => setPath('Reporting'),
+        },
+        {
+            label: 'Meet the Team',
+            locator: () => path === 'Meet the Team',
+            onClick: () => setPath('Meet the Team'),
+        },
+    ];
+    navConfig = enrichNavigationNodesWithIds(navConfig);
     return (
-        <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <span class="text-wrap" style={{width: 110}}>McKinsey &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&Company</span>
-            <div class="container">
-                <div>Digital Learning Platforms & Solutions (DLPS) Operations</div>
-                <div class="collapse navbar-collapse d-flex w-100" id="navbarText">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link p-3" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link p-3" href="#">My requests</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link p-3" href="#">Guides and resources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link p-3" href="#">Reporting</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link p-3" href="#">Meet the team</a>
-                        </li>
-                    </ul>
-                </div>
+        <>
+            <Header type={CONDENSED_HEADER} navConfig={navConfig}/>
+            <div
+                style={{
+                    fontFamily: '"McKinsey Sans","Helvetica Neue",Calibri,Corbel,Helvetica,Roboto,Droid,sans-serif',
+                    fontSize: '25px',
+                    width: '100%',
+                    height: '100%',
+                    minHeight: '50px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
             </div>
-        </nav>
-      </header>
+        </>
     );
-  }
-  export default Header;
+}
+export default MckHeader;

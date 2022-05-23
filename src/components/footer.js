@@ -1,14 +1,21 @@
 import React from 'react';
+import EmailOutline16 from '@mds/mds-icons/icons/svg/outline-16-email.svg';
+import { Footer, CONDENSED_FOOTER, TYPE_OUTLINE, Icon } from '@mds/mds-reactjs-library';
 
-function Footer() {
+function MckFooter() {
     return (
-        <footer>
-            <div class="float-start p-5" style={{width: 110}}>McKinsey &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&Company</div>
-            <div class="float-end p-5">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            &nbsp;<a href="#">Contact us</a>
-            </div>
-        </footer>
+        <Footer
+            type={CONDENSED_FOOTER}
+            linksConfig={[
+                {
+                    label: 'Contact Us',
+                    href: '#',
+                    icon: props => <Icon src={EmailOutline16} type={TYPE_OUTLINE} {...props} />,
+                },
+            ]}
+            
+        />
     );
   }
-  export default Footer;
+  export default MckFooter;
+

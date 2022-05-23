@@ -5,17 +5,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./components/home/home"
-import Header from "./components/header";
-import Footer from "./components/footer"
+import MckHeader from "./components/header";
+import MckFooter from "./components/footer"
 
 const routing = (
   <Router>
-    <div>
-      <Header />
+    <div class="position-relative">
+      <MckHeader />
       <Routes>
         <Route path="/" element={<Home/>} />
       </Routes>
-      <Footer />
+      <MckFooter />
     </div>
   </Router>
 );
